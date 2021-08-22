@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    background-color: #000;
+    color: #0FFF00;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    height: 100vh;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section > form {
+    width: 20em;
+}
+
+section > form > div {
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #0FFF00;
+}
+
+section > form > div > div:first-of-type {
+    margin: 10% 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section > form > div > div:first-of-type > div {
+    width: 50%;
+    margin: 5% 0;
+}
+
+section > form > div > div:first-of-type > div > input[type="radio"]{
+    color: #0FFF00;
+}
+
+section > form > div {
+    margin-bottom: 2em;
+}
+
+section > form > div:first-of-type > div:nth-of-type(2) > input[type="number"] {
+    background: #000;
+    border: 2px solid #0FFF00;
+    color: #0FFF00;
+    height: 1.5em;
+    width: 5em;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+section > form > div:first-of-type > div:nth-of-type(2) > input[type="number"]:focus {
+    background: #000;
+    outline: none;
+}
+
+section > form > div:first-of-type > div:nth-of-type(2) > input[type="number"]:checked {
+    background: #000;
+    outline: none;
+}
+
+section > form > div:nth-of-type(2) > input[type="number"] {
+    background: #000;
+    border: 2px solid #0FFF00;
+    color: #0FFF00;
+    height: 1em;
+    width: 3em;
+    margin-bottom: 5%;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+section > form > div:nth-of-type(2) > input[type="number"]:focus {
+    background: #000;
+    outline: none;
+}
+
+section > form > div:nth-of-type(2) > input[type="number"]:checked {
+    background: #000;
+    outline: none;
+}
+
+section > form > div:nth-of-type(2) > input[type="button"] {
+    height: 3em;
+    width: 5em;
+    border: 2px solid #0FFF00;
+    cursor: pointer;
+}
+
+#showCustomInput {
+    display: none;
+}
+
+#showAttempts {
+    display: none;
+}
