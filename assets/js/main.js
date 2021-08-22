@@ -92,6 +92,6 @@ attemptsFunc = () => {
         index = 0
         attempts.innerHTML = customNum.value
         showCustomInput.style.display = "block"
-        showAttempts.style.display = "block"
+        showAttempts.style.display = "none"
     }
 }

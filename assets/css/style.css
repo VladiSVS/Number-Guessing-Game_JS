@@ -59,7 +59,6 @@ section > form > div:first-of-type > div:nth-of-type(2) > input[type="number"] {
     color: #0FFF00;
     height: 1.5em;
     width: 5em;
-    margin-bottom: 5%;
     text-align: center;
 }
 
@@ -107,4 +106,6 @@ section > form > div:nth-of-type(2) > input[type="button"] {
 
 #showAttempts {
     display: none;
+    margin-top: 1em;
+    font-size: 1.5em;
 }
