@@ -46,6 +46,7 @@ getBingo = () => {
     if (numInput.value < 100 && numInput.value != 0) {
         if (numInput.value == randomNum) {
             addText.innerHTML = `<p>Yes!! You got me in ${index + 1}, i'm ${randomNum}. <a href="index.html">You win!! Play Again</a></p>`
+            return
         } else if (numInput.value < randomNum && numInput.value < 100) {
             addText.innerHTML = `<p>${index + 1}- You need to guess HIGHER than ${numInput.value}, try again...</p>`
         } else if (numInput.value > randomNum && numInput.value < 100) {

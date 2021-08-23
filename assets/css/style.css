@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
 * {
     margin: 0;
     background-color: #000;
     color: #0FFF00;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inconsolata', monospace;
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
