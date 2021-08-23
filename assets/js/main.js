@@ -65,29 +65,25 @@ counter = () => {
         addText.innerHTML = `<p>Unlucky, attempts ended :( <a href="index.html">Play Again</a></p></p>`
         return
     }
-    index = index + 1
+    index++
     attempt.innerHTML = index
 }
 
 attemptsFunc = () => {
     attempt.innerHTML = 0
     if (radioFour.checked) {
-        index = 0
         attempts.innerHTML = radioFour.value
         showCustomInput.style.display = "none"
         showAttempts.style.display = "none"
     } else if (radioFive.checked) {
-        index = 0
         attempts.innerHTML = radioFive.value
         showCustomInput.style.display = "none"
         showAttempts.style.display = "none"
     } else if (radioSix.checked) {
-        index = 0
         attempts.innerHTML = radioSix.value
         showCustomInput.style.display = "none"
         showAttempts.style.display = "none"
     } else if (custom.checked) {
-        index = 0
         attempts.innerHTML = customNum.value
         showCustomInput.style.display = "block"
         showAttempts.style.display = "none"
