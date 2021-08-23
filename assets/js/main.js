@@ -1,16 +1,17 @@
-let showAttempts = document.getElementById("showAttempts")
-let showCustomInput = document.getElementById("showCustomInput")
-let customNum = document.getElementById("customNum")
-let attempt = document.getElementById("attempt")
-let attempts = document.getElementById("attempts")
-let numInput = document.getElementById("numInput")
-let radioFour = document.getElementById("radioFour")
-let radioFive = document.getElementById("radioFive")
-let radioSix = document.getElementById("radioSix")
-let radios = document.getElementById("radios")
-let custom = document.getElementById("custom")
-let addText = document.getElementById("addText")
-let randomNum = Math.floor(Math.random() * 100) + 1
+const showAttempts = document.getElementById("showAttempts")
+const showCustomInput = document.getElementById("showCustomInput")
+const customNum = document.getElementById("customNum")
+const attempt = document.getElementById("attempt")
+const attempts = document.getElementById("attempts")
+const numInput = document.getElementById("numInput")
+const radioFour = document.getElementById("radioFour")
+const radioFive = document.getElementById("radioFive")
+const radioSix = document.getElementById("radioSix")
+const radios = document.getElementById("radios")
+const custom = document.getElementById("custom")
+const addText = document.getElementById("addText")
+
+const randomNum = Math.floor(Math.random() * 100) + 1
 
 console.log(randomNum)
 
@@ -33,18 +34,33 @@ getRechnen = () => {
     } else if (custom.checked) {
         attempts.innerHTML = customNum.value
         radios.style.display = "none"
-        showCustomInput.style.display = "block"
+        showCustomInput.style.display = "none"
         showAttempts.style.display = "block"
     }
 
     getBingo()
-    counter()
 
+}
+
+getBingo = () => {
+    if (numInput.value < 100 && numInput.value != 0) {
+        if (numInput.value == randomNum) {
+            addText.innerHTML = `<p>Yes!! You got me in ${index + 1}, i'm ${randomNum}. <a href="index.html">You win!! Play Again</a></p>`
+        } else if (numInput.value < randomNum && numInput.value < 100) {
+            addText.innerHTML = `<p>${index + 1}- You need to guess HIGHER than ${numInput.value}, try again...</p>`
+        } else if (numInput.value > randomNum && numInput.value < 100) {
+            addText.innerHTML = `<p>${index + 1}- You need to guess LOWER than ${numInput.value}, try again...</p>`
+        }
+    } else {
+        addText.innerHTML = `<p>Error</p>`
+        return
+    }
+    counter()
 }
 
 let index = 0
 counter = () => {
-    if (radioFour.checked && index >= radioFour.value || radioFive.checked && index >= radioFive.value || radioSix.checked && index >= radioFive.value || custom.checked && index >= radioFive.value) {
+    if (radioFour.checked && index >= radioFour.value || radioFive.checked && index >= radioFive.value || radioSix.checked && index >= radioSix.value || custom.checked && index >= customNum.value) {
         addText.innerHTML = `<p>Unlucky, attempts ended :( <a href="index.html">Play Again</a></p></p>`
         return
     }
@@ -76,14 +92,3 @@ attemptsFunc = () => {
         showAttempts.style.display = "none"
     }
 }
-
-getBingo = () => {
-    if (numInput.value == randomNum) {
-        addText.innerHTML = `<p>Yes!! You got me in ${index + 1}, i'm ${randomNum}. <a href="index.html">You win!! Play Again</a></p>`
-    } else if (numInput.value < randomNum) {
-        addText.innerHTML = `<p>${index + 1}- You need to guess higher than ${numInput.value}, try again...</p>`
-    } else if (numInput.value > randomNum) {
-        addText.innerHTML = `<p>${index + 1}- You need to guess lower than ${numInput.value}, try again...</p>`
-    }
-}
-
