@@ -31,7 +31,7 @@ getRechnen = () => {
         radios.style.display = "none"
         showCustomInput.style.display = "none"
         showAttempts.style.display = "block"
-    } else if (custom.checked) {
+    } else if (custom.checked && customNum.value != 0) {
         attempts.innerHTML = customNum.value
         radios.style.display = "none"
         showCustomInput.style.display = "none"
@@ -45,7 +45,7 @@ getRechnen = () => {
 getBingo = () => {
     if (numInput.value < 100 && numInput.value != 0) {
         if (numInput.value == randomNum) {
-            addText.innerHTML = `<p>Yes!! You got me in ${index}, i'm ${randomNum}. <a href="index.html">You win!! Play Again</a></p>`
+            addText.innerHTML = `<p>Yes!! You got me in ${index + 1}, i'm ${randomNum}. <a href="index.html">You win!! Play Again</a></p>`
             return
         } else if (numInput.value < randomNum && numInput.value < 100) {
             addText.innerHTML = `<p>${index + 1}- You need to guess HIGHER than ${numInput.value}, try again...</p>`
@@ -70,7 +70,7 @@ counter = () => {
 }
 
 attemptsFunc = () => {
-    attempt.innerHTML = 0
+    attempt.innerHTML = 1
     if (radioFour.checked) {
         attempts.innerHTML = radioFour.value
         showCustomInput.style.display = "none"
